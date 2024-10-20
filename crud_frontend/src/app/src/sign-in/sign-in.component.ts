@@ -35,6 +35,7 @@ export class SignInComponent {
       },
       (error) => {
         this.isError = true;
+        console.log(error)
       }
     );
   }

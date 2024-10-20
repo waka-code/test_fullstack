@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Waddimi Saint Louis\\source\\repos\\Productos\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C1863DCB-4E21-4513-AE8B-E133685696D2}|Productos.Api\\Productos.Api.csproj|c:\\users\\waddimi saint louis\\source\\repos\\productos\\productos.api\\productos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C1863DCB-4E21-4513-AE8B-E133685696D2}|Productos.Api\\Productos.Api.csproj|solutionrelative:productos.api\\productos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C1863DCB-4E21-4513-AE8B-E133685696D2}|Productos.Api\\Productos.Api.csproj|c:\\users\\waddimi saint louis\\source\\repos\\productos\\productos.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1863DCB-4E21-4513-AE8B-E133685696D2}|Productos.Api\\Productos.Api.csproj|solutionrelative:productos.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,15 +22,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 305,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Productos.Api",
+              "DocumentMoniker": "C:\\Users\\Waddimi Saint Louis\\source\\repos\\Productos\\Productos.Api\\Productos.Api.csproj",
+              "RelativeDocumentMoniker": "Productos.Api\\Productos.Api.csproj",
+              "ToolTip": "C:\\Users\\Waddimi Saint Louis\\source\\repos\\Productos\\Productos.Api\\Productos.Api.csproj",
+              "RelativeToolTip": "Productos.Api\\Productos.Api.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-20T18:25:11.185Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Waddimi Saint Louis\\source\\repos\\Productos\\Productos.Api\\appsettings.json",
               "RelativeDocumentMoniker": "Productos.Api\\appsettings.json",
@@ -39,13 +56,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\Waddimi Saint Louis\\source\\repos\\Productos\\Productos.Api\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Productos.Api\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\Waddimi Saint Louis\\source\\repos\\Productos\\Productos.Api\\Controllers\\UserController.cs",
               "RelativeToolTip": "Productos.Api\\Controllers\\UserController.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAowDMAAAASAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowDMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-18T14:56:37.105Z",
               "EditorCaption": ""
