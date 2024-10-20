@@ -1,0 +1,12 @@
+<div class="product-item">
+  <span>{{ product.name }}</span>
+  <span>{{ product.description }}</span>
+  <span>{{ product.price }}</span>
+  <span>{{ product.stock }}</span>
+  <span>{{ product.creationDate }}</span>
+  <span>{{ product.lastUpdate }}</span>
+  <div>
+    <button (click)="onEdit()">editar</button>
+    <button (click)="onDelete()" class="delete">eliminar</button>
+  </div>
+</div>

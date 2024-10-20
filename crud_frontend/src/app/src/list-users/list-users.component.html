@@ -1,0 +1,12 @@
+<h2>List User</h2>
+<input type="text" [(ngModel)]="searchText"  (input)="onChangedSearchUser($event)" placeholder="Search User">
+<div *ngIf="listUsers.length > 0; else noResults" class="modal-list">
+  <div *ngFor="let user of listUsers" class="user">
+    <span>{{ user.role }}</span>
+    <span>{{ user.name }}</span>
+    <span>{{ user.email }}</span>
+  </div>
+</div>
+<ng-template #noResults>
+  <p>No User found</p>
+</ng-template>

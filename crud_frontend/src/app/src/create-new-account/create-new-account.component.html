@@ -1,0 +1,38 @@
+<div class="container-sing-up">
+  <div class="sing-up">
+    <h2>Sing Up</h2>
+
+    <form (ngSubmit)="createNewUser()" class="form">
+      <label for="name" required="true">Name</label>
+      <input id="name" name="name" [(ngModel)]="register.name" />
+
+      <label for="password">Password</label>
+      <input
+        required="true"
+        id="password"
+        name="password"
+        type="password"
+        [(ngModel)]="register.password"
+      />
+
+      <label for="Email">Email</label>
+      <input
+        id="Email"
+        required="true"
+        name="Email"
+        [(ngModel)]="register.email"
+      />
+
+      <label for="role">Role</label>
+      <select id="role" name="role" [(ngModel)]="register.role">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+      <Span (click)="login()">Ir a login</Span>
+      <button type="submit">Submit</button>
+    </form>
+    @if(isError){
+    <p class="error">Email o password invalido, por favor intenta de nuevo</p>
+    }
+  </div>
+</div>

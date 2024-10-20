@@ -1,0 +1,23 @@
+<div class="container-login">
+  <div class="login">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()" class="form">
+    <label for="username">Username</label>
+    <input id="username" name="username" [(ngModel)]="username" />
+
+    <label for="password">Password</label>
+    <input
+      id="password"
+      name="password"
+      type="password"
+      [(ngModel)]="password"
+    />
+    <Span (click)="onCreateNewUser()">Create New User</Span>
+
+    <button type="submit">Login</button>
+  </form>
+  @if(isError){
+    <p class="error">Invalid username or password</p>
+  }
+</div>
+</div>

@@ -1,0 +1,52 @@
+// Mixins
+@mixin flex-center($justify: space-between, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+
+@mixin button-style($bg-color: #007bff, $width: "100px", $height: 30px) {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: $bg-color;
+  color: #fff;
+  cursor: pointer;
+  width: $width;
+  height: $height;
+}
+
+.product-item {
+  @include flex-center($direction: row);
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-item span {
+  margin: 0;
+  font-size: 18px;
+  color: #000;
+}
+
+.product-item div {
+  @include flex-center($direction: row);
+  gap: 10px;
+}
+
+.product-item div button {
+  @include button-style($width: 60px, $height: 35px);
+  transition: ease-in-out 0.1s;
+}
+
+.product-item div .delete {
+  @include button-style(#ff0000, 80px, 35px);
+}
+.product-item div button:active {
+  transform: scale(0.96);
+}

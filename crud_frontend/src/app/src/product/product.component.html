@@ -1,0 +1,122 @@
+<div class="product-container">
+  <div class="user-container">
+    <section>
+      <span>{{ user.name.toLocaleUpperCase() }}</span>
+      <div>
+        @if(user.role === 'admin'){
+        <button (click)="userList()">List User</button>
+        }
+        <button (click)="logout()" class="logout">Logout</button>
+      </div>
+    </section>
+    <div>
+      <section>
+        <h2>List Product</h2>
+      </section>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Search for products"
+          (input)="onChange($event)"
+        />
+        <button (click)="newProduct()">Add New</button>
+
+        <div class="btn-control">
+          <button (click)="prev()">Prev</button>
+          <span>{{ products.pageNumber }}/{{ products.totalPages }}</span>
+          <button (click)="next()">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-products">
+    <div>
+      <div class="product-item">
+        <span>Name</span>
+        <span>Description</span>
+        <span>Price</span>
+        <span>Stock</span>
+        <span>Creation Date</span>
+        <span>Last Update</span>
+        <span>Accion</span>
+      </div>
+    </div>
+
+    <div *ngIf="!isLoading && productsFilter && productsFilter.length > 0; else listProducts">
+      <app-product-item
+        *ngFor="let product of productsFilter"
+        [product]="product"
+        (edit)="openModal($event)"
+        (delete)="deleteProduct($event)"
+      ></app-product-item>
+    </div>
+
+    <ng-template #listProducts>
+      <div *ngIf="!isLoading && products && products.products.length > 0; else noResults">
+        <app-product-item
+          *ngFor="let product of products.products"
+          [product]="product"
+          (edit)="openModal($event)"
+          (delete)="deleteProduct($event)"
+        ></app-product-item>
+      </div>
+    </ng-template>
+
+    <ng-template #noResults>
+      <p>No products found</p>
+    </ng-template>
+  </div>
+
+  <div *ngIf="modalEdit" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>Edit Product</h2>
+      <form (ngSubmit)="updateProduct()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="update.name" />
+        <label for="description">Description:</label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          [(ngModel)]="update.description"
+        />
+        <label for="price">Price:</label>
+        <input
+          type="number"
+          id="price"
+          name="price"
+          [(ngModel)]="update.price"
+        />
+        <label for="stock">Stock:</label>
+        <input type="text" id="stock" name="stock" [(ngModel)]="update.stock" />
+        <button type="submit">Save</button>
+      </form>
+      @if(toastMessage.isError){
+      <div class="toast-error">
+        <span>{{ toastMessage.message }}</span>
+      </div>
+      } @if(toastMessage.isSuccessful){
+      <div class="toast-success">
+        <span>{{ toastMessage.message }}</span>
+      </div>
+      }
+    </div>
+  </div>
+
+  <div *ngIf="modalAddNew" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <app-new-product (closeModalEvent)="closeModal()" />
+    </div>
+  </div>
+
+  <div *ngIf="isListUser" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <app-list-users />
+    </div>
+  </div>
+</div>

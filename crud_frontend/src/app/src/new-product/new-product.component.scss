@@ -1,0 +1,44 @@
+@mixin input-style($width: "100%") {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  width: $width;
+}
+
+@mixin button-style($bg-color: #007bff, $width: "100px", $height: 30px) {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: $bg-color;
+  color: #fff;
+  cursor: pointer;
+  width: $width;
+  height: $height;
+}
+
+.new-product {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.new-product  input {
+  @include input-style();
+}
+
+.new-product button {
+  @include button-style($height: 35px);
+}
+.toast-success{
+  color: #28a745;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.toast-error{
+  color: #ff0000;
+  margin-top: 10px;
+  text-align: center;
+}
+

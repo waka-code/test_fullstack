@@ -1,0 +1,32 @@
+<h2>New Product</h2>
+<div class="new-product">
+    <label for="name">Product Name</label>
+    <input id="name" name="name" [(ngModel)]="product.name"/>
+
+    <label for="description">Description</label>
+    <input
+      id="productDescription"
+      name="description"
+      [(ngModel)]="product.description"
+    />
+
+    <label for="stock">Stock</label>
+    <input id="productStock" name="stock"  [(ngModel)]="product.stock" />
+
+    <label for="price">Price</label>
+    <input id="productPrice" name="price"  [(ngModel)]="product.price"/>
+
+  <button (click)="addProduct()">ADD</button>
+</div>
+
+@if(toastMessage.isSuccess){
+  <div class="toast-success">
+    {{toastMessage.message}}
+  </div>
+}
+
+@if(toastMessage.isError){
+  <div class="toast-error">
+    {{toastMessage.message}}
+  </div>
+}
