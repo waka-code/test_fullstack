@@ -70,6 +70,10 @@ export class ProductComponent {
     }
   }
 
+  onRefresh() {
+    this.loadProducts();
+  }
+
   logout() {
     localStorage.removeItem('user');
     this.router.navigate(['']);

@@ -1,7 +1,7 @@
 <div class="product-container">
   <div class="user-container">
     <section>
-      <span>{{ user.name.toLocaleUpperCase() }}</span>
+      <span>ADMIN: {{ user.name.toLocaleUpperCase() }}</span>
       <div>
         @if(user.role === 'admin'){
         <button (click)="userList()">List User</button>
@@ -11,22 +11,21 @@
     </section>
     <div>
       <section>
-        <h2>List Product</h2>
-      </section>
-
-      <div>
         <input
           type="text"
           placeholder="Search for products"
           (input)="onChange($event)"
         />
-        <button (click)="newProduct()">Add New</button>
-
+      </section>
+      <div>
         <div class="btn-control">
           <button (click)="prev()">Prev</button>
           <span>{{ products.pageNumber }}/{{ products.totalPages }}</span>
           <button (click)="next()">Next</button>
         </div>
+        <button (click)="newProduct()">
+          ADD NEW PRODUCT
+        </button>
       </div>
     </div>
   </div>
@@ -44,8 +43,14 @@
       </div>
     </div>
 
-    <div *ngIf="!isLoading && productsFilter && productsFilter.length > 0; else listProducts">
+    <div
+      *ngIf="
+        !isLoading && productsFilter && productsFilter.length > 0;
+        else listProducts
+      "
+    >
       <app-product-item
+        (refresh)="onRefresh()"
         *ngFor="let product of productsFilter"
         [product]="product"
         (edit)="openModal($event)"
@@ -54,8 +59,14 @@
     </div>
 
     <ng-template #listProducts>
-      <div *ngIf="!isLoading && products && products.products.length > 0; else noResults">
+      <div
+        *ngIf="
+          !isLoading && products && products.products.length > 0;
+          else noResults
+        "
+      >
         <app-product-item
+          (refresh)="onRefresh()"
           *ngFor="let product of products.products"
           [product]="product"
           (edit)="openModal($event)"

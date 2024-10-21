@@ -2,9 +2,9 @@
 <input type="text" [(ngModel)]="searchText"  (input)="onChangedSearchUser($event)" placeholder="Search User">
 <div *ngIf="listUsers.length > 0; else noResults" class="modal-list">
   <div *ngFor="let user of listUsers" class="user">
-    <span>{{ user.role }}</span>
-    <span>{{ user.name }}</span>
-    <span>{{ user.email }}</span>
+    <span title={{user.role}}>{{ user.role.toLocaleUpperCase() }}</span>
+    <span title={{user.name}}>{{ user.name }}</span>
+    <span title={{user.email}}>{{ user.email }}</span>
   </div>
 </div>
 <ng-template #noResults>

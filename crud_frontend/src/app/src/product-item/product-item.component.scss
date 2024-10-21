@@ -7,12 +7,8 @@
 }
 
 
-@mixin button-style($bg-color: #007bff, $width: "100px", $height: 30px) {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
+@mixin button-style($bg-color: #00000000, $width: "100px", $height: 30px) {
   background-color: $bg-color;
-  color: #fff;
   cursor: pointer;
   width: $width;
   height: $height;
@@ -40,12 +36,12 @@
 }
 
 .product-item div button {
-  @include button-style($width: 60px, $height: 35px);
+  @include button-style();
   transition: ease-in-out 0.1s;
 }
 
 .product-item div .delete {
-  @include button-style(#ff0000, 80px, 35px);
+  @include button-style($height: 45px);
 }
 .product-item div button:active {
   transform: scale(0.96);

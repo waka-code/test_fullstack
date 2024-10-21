@@ -1,7 +1,6 @@
 import { isError } from 'util';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ProductrServicesService } from '../services/product-services.service';
-import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -13,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class NewProductComponent {
   @Output() closeModalEvent = new EventEmitter<void>();
-
+  @Output() refresh = new EventEmitter<void>();
   product = {
     id: 0,
     name: '',
@@ -58,11 +57,12 @@ export class NewProductComponent {
       };
       setTimeout(()=>{
         this.close();
+        this.refresh.emit();
       },2000)
     },
   (error) => {
     this.toastMessage.isError = true;
-    this.toastMessage.message = "A problem occurred while adding the product";
+    this.toastMessage.message = "A problem occurred..";
   });
   };
 

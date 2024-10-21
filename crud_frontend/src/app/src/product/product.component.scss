@@ -29,11 +29,10 @@
 .product-container .user-container section {
   @include flex-center();
   padding: 10px;
-  border-bottom: 1px solid #ccc;
 }
 
 .product-container .user-container section span {
-  font-size: 20px;
+  font-size: 17 px;
   font-weight: 600;
 }
 
@@ -71,7 +70,17 @@
 }
 
 .product-container .user-container div div button {
-  @include button-style($height: 35px);
+  @include button-style($height: 35px, $width: 200px);
+}
+
+.product-container .user-container div .btn-control button{
+  @include button-style($height: 35px, $width: 100px);
+  background-color: #d3d3d3;
+  color: black;
+  border: none;
+  &:hover {
+    background-color: #a9a9a9;
+  }
 }
 
 .product-container .box-products {
@@ -169,8 +178,10 @@
   cursor: pointer;
 }
 
+.modal
+.modal-content
 .toast-success{
-  color: #28a745;
+  color: #ffffff;
   margin-top: 10px;
   text-align: center;
 }
@@ -178,7 +189,7 @@
 .modal
 .modal-content
 .toast-error{
-  color: #ff0000;
+  color: #ffffff;
   margin-top: 10px;
   text-align: center;
 }
