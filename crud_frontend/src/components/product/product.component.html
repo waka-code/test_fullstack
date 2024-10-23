@@ -1,7 +1,7 @@
 <div class="product-container">
   <div class="user-container">
     <section>
-      <span>ADMIN: {{ user.name.toLocaleUpperCase() }}</span>
+      <span>{{ user.name.toLocaleUpperCase() }}</span>
       <div>
         @if(user.role === 'admin'){
         <button (click)="userList()">List User</button>

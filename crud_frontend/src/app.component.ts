@@ -2,14 +2,14 @@ import { routes } from './app.routes';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { ProductComponent } from './src/product/product.component';
-import { CreateNewAccountComponent } from './src/create-new-account/create-new-account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserServicesService } from './src/services/user-services.service';
-import { ProductrServicesService } from './src/services/product-services.service';
 import { CommonModule } from '@angular/common';
 import { IgnoreSelfSignedCertInterceptor } from './ignore-self-signed-cert.interceptor';
-import { ProductModule } from './src/product-item/ProductModule';
+import { CreateNewAccountComponent } from './components/create-new-account/create-new-account.component';
+import { ProductModule } from './components/product-item/ProductModule';
+import { ProductComponent } from './components/product/product.component';
+import { ProductrServicesService } from './components/services/product-services.service';
+import { UserServicesService } from './components/services/user-services.service';
 
 @Component({
   selector: 'app-root',
